@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+
+
+:root {
+  --primary-color: #b32557;
+  --white: #ffffff;
+  --bg-dark: #0a0a0f;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(255, 255, 255, 0.15);
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --accent-red: #ff3d5a;
+  --accent-green: #00d4aa;
+  --accent-gold: #ffd700;
+  --glow-green: rgba(0, 212, 170, 0.4);
+  --max-width: 1200px; 
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Fredoka", sans-serif;
+  background-image: url("assets/bg2.jpeg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: var(--max-width);
+  margin: auto;
+  overflow: hidden;
+}
+
+nav {
+  padding: 2rem 1rem;
+  overflow: hidden;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.nav__links > div li:not(:first-child) {
+  display: none;
+}
+
+.nav__links img {
+  max-width: 50px;
+}
+
+.nav__links a {
+  position: relative;
+  isolation: isolate;
+  padding-bottom: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.nav__links a::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--white);
+  transition: 0.3s;
+}
+
+.nav__links a:hover::after {
+  width: 100%;
+}
+
+
+section {
+	position: relative;
+	z-index: 2;
+	padding: 30px 15px;
+}
+
+.section-header {
+	text-align: center;
+	margin-bottom: 80px;
+}
+
+
+
+.section-title {
+	font-family: 'Syne', sans-serif;
+	font-size: clamp(2.5rem, 5vw, 4rem);
+	font-weight: 800;
+	letter-spacing: -2px;
+	color: var(--white);
+}
+
+.section-subtitle {
+	font-size: 1.1rem;
+	color: var(--text-secondary);
+	max-width: 500px;
+	margin: 20px auto 0;
+}
+
+
+.news {
+	background: linear-gradient(180deg, transparent 0%, rgba(0, 212, 170, 0.02) 50%, transparent 100%);
+}
+
+.news-grid {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 24px;
+}
+
+.news-card {
+	display: grid;
+	grid-template-columns: 140px 1fr;
+	gap: 24px;
+	padding: 24px;
+	background: var(--bg-glass);
+	border: 1px solid var(--border-glass);
+	border-radius: 24px;
+	align-items: center;
+	transition: all 0.4s ease;
+}
+
+.news-card:hover {
+	border-color: var(--border-glow);
+	transform: translateX(8px);
+	background: rgba(255, 255, 255, 0.08);
+}
+
+.news-image {
+	width: 140px;
+	height: 140px;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.news-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.news-content {
+	padding-right: 20px;
+}
+
+.news-number {
+	font-family: 'Syne', sans-serif;
+	font-size: 0.8rem;
+	font-weight: 700;
+	color: var(--accent-green);
+	margin-bottom: 8px;
+	letter-spacing: 2px;
+}
+
+.news-content h3 {
+	font-family: 'Syne', sans-serif;
+	font-size: 1.3rem;
+	font-weight: 700;
+	margin-bottom: 8px;
+	color: var(--white);
+}
+
+.news-content p {
+	font-size: 0.9rem;
+	color: var(--text-secondary);
+	line-height: 1.6;
+	margin-bottom: 16px;
+}
+
+.news-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 18px;
+	background: transparent;
+	border: 1px solid var(--border-glow);
+	border-radius: 10px;
+	color: var(--text-secondary);
+	text-decoration: none;
+	font-size: 0.8rem;
+	font-weight: 500;
+	transition: all 0.3s ease;
+}
+
+.news-btn svg {
+	width: 16px;
+	height: 16px;
+	stroke: var(--accent-gold);
+	transition: transform 0.3s ease;
+}
+
+.news-btn:hover {
+	background: rgba(255, 215, 0, 0.1);
+	border-color: var(--accent-gold);
+	color: var(--accent-gold);
+}
+
+.news-btn:hover svg {
+	transform: translateX(4px);
+}
+
+
+
+
+
+
+@media (width > 768px) {
+  .nav__links > div li:not(:first-child) {
+    display: block;
+  }
+
+  .nav__links > div {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}

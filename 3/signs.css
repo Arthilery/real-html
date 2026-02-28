@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+
+
+:root {
+  --primary-color: #b32557;
+  --white: #ffffff;
+  --bg-dark: #0a0a0f;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(255, 255, 255, 0.15);
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --text-dim: rgba(255, 255, 255, 0.4);
+  --accent-red: #ff3d5a;
+  --accent-green: #00d4aa;
+  --accent-gold: #ffd700;
+  --glow-green: rgba(0, 212, 170, 0.4);
+  --max-width: 1200px; 
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Fredoka", sans-serif;
+  background-image: url("assets/bg2.jpeg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: var(--max-width);
+  margin: auto;
+  overflow: hidden;
+}
+
+nav {
+  padding: 2rem 1rem;
+  overflow: hidden;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.nav__links > div li:not(:first-child) {
+  display: none;
+}
+
+.nav__links img {
+  max-width: 50px;
+}
+
+.nav__links a {
+  position: relative;
+  isolation: isolate;
+  padding-bottom: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.nav__links a::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--white);
+  transition: 0.3s;
+}
+
+.nav__links a:hover::after {
+  width: 100%;
+}
+
+
+section {
+	position: relative;
+	z-index: 2;
+	padding: 30px 15px;
+}
+
+.section-header {
+	text-align: center;
+	margin-bottom: 80px;
+}
+
+.section-title {
+	font-family: 'Syne', sans-serif;
+	font-size: clamp(2.5rem, 5vw, 4rem);
+	font-weight: 800;
+	letter-spacing: -2px;
+	color: var(--white);
+}
+
+.sign {
+	background: linear-gradient(180deg, transparent 0%, rgba(255, 215, 0, 0.02) 50%, transparent 100%);
+}
+
+.sign-container {
+ 	max-width: 800px;
+	margin: 0 auto;
+	padding: 60px;
+	background: var(--bg-glass);
+	backdrop-filter: blur(40px);
+	-webkit-backdrop-filter: blur(40px);
+	border: 1px solid var(--border-glass);
+	border-radius: 32px;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.sign-container::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: linear-gradient(90deg, var(--accent-red), var(--accent-gold), var(--accent-green));
+}
+
+.sign-container .sign-input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.sign-input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: var(--white);
+  padding: 20px 45px 20px 20px;
+}
+
+.sign-input-box input::placeholder {
+  color: var(--text-dim)
+}
+
+.sign-input-box input:focus {
+	border-color: var(--accent-gold);
+	background: rgba(255, 255, 255, 0.08);
+}
+
+.sign-input-box i {
+  position: absolute;
+  right: 20px;
+  top: 30%;
+  transform: translate(-50%);
+  font-size: 20px;
+}
+
+.sign-container .sign-remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+  color: var(--text-secondary);
+}
+
+.sign-remember-forgot label input {
+  accent-color: var(--white);
+  margin-right: 3px;
+
+}
+
+.sign-remember-forgot a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.sign-remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+.sign-container .sign-btn {
+  width: 100%;
+  height: 45px;
+  background: var(--accent-red);
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--white);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.sign-btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 15px 40px var(--glow-red);
+}
+
+.sign-container .sign-register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+  color: var(--text-secondary);
+}
+
+.sign-register-link p a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sign-register-link p a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+@media (width > 768px) {
+  .nav__links > div li:not(:first-child) {
+    display: block;
+  }
+
+  .nav__links > div {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
